@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import MainPage from './components/MainPage';
+import SideBar from './components/SideBar';
+import {GlobalStateProvider} from '../src/Provider';
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalStateProvider>
+    <section className="App">
+      <div className="main-layout">
+        <MainPage />
+        <SideBar/>
+      </div>
+    </section>
+    </GlobalStateProvider>
   );
 }
 
+
 export default App;
+
+// I identified 3 core components; 
+// 1. header
+// 2. MainPage
+// 3. Sider
+// I wrote code for MainPage and Sidebar
